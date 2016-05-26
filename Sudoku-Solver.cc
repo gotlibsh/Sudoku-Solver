@@ -20,7 +20,7 @@
 using namespace std;
 
 //========= Constants =========//
-const int N = 3;            // The size of 1 square in the 							 // sudoku.
+const int N = 3;            // The size of 1 square in the sudoku.
 const int EMPTY = 0;        // A sign for an empty cell.
 const int STOP_INPUT = -1;  // A sign for stop get input.
 
@@ -69,13 +69,13 @@ bool fill_sud(int sud[][N*N], int row, int col)
     // Points to the column number of the next cell.
 
     // If we get here, it means we succeed to solve the sudoku.
-	if(row == N*N)
-		return true;
+    if(row == N*N)	
+    	return true;
 
     // Checks if we are allowed to change the value of the current cell.
     // If we're not, then we're moving to the next one.
-	if(sud[row][col] != EMPTY)
-		return fill_sud(sud, next_row, next_col);
+    if(sud[row][col] != EMPTY)
+	return fill_sud(sud, next_row, next_col);
 
     // We're about to try and find the legal and appropriate value
     // to put in the current cell.
@@ -93,7 +93,7 @@ bool fill_sud(int sud[][N*N], int row, int col)
     }
 
     // None of the values solved the sudoku.
-	return false;
+    return false;
 }
 
 //======== Print Sudoku ========//
@@ -114,8 +114,8 @@ void print_sud(const int sud[][N*N])
 bool is_legal(const int sud[][N*N], int row, int col, int val)
 {
 	return (is_row_ok(sud[row], col, val) &&
-            is_col_ok(sud, row, col, val) &&
-            is_sqr_ok(sud, row, col, val));
+                is_col_ok(sud, row, col, val) &&
+                is_sqr_ok(sud, row, col, val));
 }
 
 //========= Is Row OK =========//
