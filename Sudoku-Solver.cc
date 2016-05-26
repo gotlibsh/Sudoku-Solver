@@ -1,9 +1,8 @@
 /*
- *  File: ex9a.cc
+ *  File: Sudoku-Solver.cc
  *
  *  Created On: 12, April 2016
  *      Author: Shlomo Gottlieb
- *          ID: 313377145
  *
  * Description: This program holds A sudoku board (size: 9*9),
  *              it allows the user to input values the he choices
